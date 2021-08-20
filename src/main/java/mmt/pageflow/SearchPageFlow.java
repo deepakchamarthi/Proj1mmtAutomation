@@ -17,24 +17,25 @@ import mmt.pages.SearchPage;
 
 public class SearchPageFlow {
 
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 
 		DriverFactory.initiateDriver();
 		SearchPage search = new SearchPage();
 		PageURL url = new PageURL();
 		search.openPage(url.searchPageURL);
 
-		//run_SearchPage();
-	} */
+		run_SearchPage();
+	} 
 
 	
 	//Runner to run all the element interaction methods in SearchPage ( page2)
-	public  void run_SearchPage() {
+	public  static void run_SearchPage() {
 
 		SearchPage search = new SearchPage();
 
-		//Scroll the price selector control 
-		search.scrollControl(5, 0, SearchPage.price_Selector);
+		//Scroll the price selector control
+		search.scrollControlBy();
+		//search.scrollControl(5, 0, SearchPage.price_Selector);
 		//Select the Rating. 
 		search.startRating(StarRating.RATING4);
 		//Select the 5th hotel in the list.

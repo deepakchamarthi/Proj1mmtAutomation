@@ -1,19 +1,22 @@
 package mmt.pages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import mmt.bo.HomePageBO;
 import mmt.utilities.ScreenshotUtil;
 
 public class RoomSelectionPage extends BasePage {
 
-	Logger logger = LogManager.getLogger(SearchPage.class);
+	Logger logger = LogManager.getLogger(RoomSelectionPage.class);
 //Page element locators
 	public static By rooms_Link = By.cssSelector("#detpg_hotel_rooms");
 	public static By check_count = By.cssSelector("[class*='comboTitle']");
@@ -22,6 +25,8 @@ public class RoomSelectionPage extends BasePage {
 	public static By guestCount2 = By.cssSelector("[value='2 Adults 2 Children'] ");
 	public static By addRooms_Button = By.cssSelector("#detpg_multi_2_add_room");
 	public static By bookCmbo_Button = By.cssSelector("#detpg_book_combo_btn");
+	public static By roomSuggetion = By.cssSelector("[class='_RoomType'] ");
+	public static By guestText = By.cssSelector("[class*='comboTitle'] ");
 
 	public static By pickAnotherDate_Button = By.cssSelector("#alternateDates_details");
 
@@ -44,9 +49,10 @@ public class RoomSelectionPage extends BasePage {
 
 	}
 
-	//Get the values of guest info
-	//There is a pending implementation to extract the data of guests count and assert with the input guest count
-	
+	// Get the values of guest info
+	// There is a pending implementation to extract the data of guests count and
+	// assert with the input guest count
+
 	public void getValue() {
 
 		WebElement ele = driver.findElement(By.id("guest"));
@@ -56,7 +62,65 @@ public class RoomSelectionPage extends BasePage {
 
 	}
 
-	//To verify the test of the guest count.
+	// To verify guest count from the sugggestions.
+
+	public void verifyGuestCountFromRooms()
+
+	{
+		// Setting up Adults & children count using HomePageBO class
+		HomePageBO home = new HomePageBO();
+		home.setTotalAdults(4);
+		home.setTotalChildren(3);
+
+		try
+		{
+			
+		
+		// Collecting the suggestion into the list
+		// Not using this list anywhere. But planned to use it for future purpose if we
+		// need to find some other text too
+		base.waitForElementToBeVisible(guestText);
+		List<WebElement> suggestions = driver.findElements(guestText);
+		boolean flag;
+
+		int counter = 0;
+		List<String> suggesstionsList = new ArrayList<String>();
+		for (WebElement suggestion : suggestions) {
+			counter++;
+
+			// WebElement roomText = driver.findElement(By.xpath("//p[text()='Adults']"));
+			// String roomTextValue = roomText.getText();
+			// p[text()='Room']
+
+			String roomSuggestion = suggestion.getText();
+			suggesstionsList.add(roomSuggestion);
+
+			//Checking if the text contains given adults and children count
+			flag = roomSuggestion.contains(
+					"Recommended for " + home.getTotalAdults() + " Adults & " + home.getTotalChildren() + " Children");
+			if (flag == true) {
+				logger.info(" Room#" + counter
+						+ " Adults and Children count is matching with the input.Total Adults Count: "
+						+ home.getTotalAdults() + " & Total Children Count: " + home.getTotalChildren());
+
+			} else
+				logger.error(" Room#" + counter + " Adults and Children count not matching with input Adults: "
+						+ home.getTotalAdults() + " & Total Children Count: " + home.getTotalChildren());
+
+		}
+		}
+
+		catch(Exception e)
+		{
+			
+			logger.error("Problem with getting total adults/children count from the text. Continuing");
+			 
+			e.printStackTrace();
+			
+		}
+	}
+
+	// To verify the test of the guest count.
 	public void VerifyText()
 
 	{
@@ -80,7 +144,7 @@ public class RoomSelectionPage extends BasePage {
 		}
 	}
 
-	//Logic to select the room based on children and adult count displayed
+	// Logic to select the room based on children and adult count displayed
 	public void click2audlts1ChildButton() {
 
 		base.waitForElementToBeVisible(rooom_Header);
@@ -124,8 +188,7 @@ public class RoomSelectionPage extends BasePage {
 
 	}
 
-	
-	//booking button
+	// booking button
 	public void bookCombo() {
 
 		try {
@@ -146,6 +209,7 @@ public class RoomSelectionPage extends BasePage {
 				}
 
 				else {
+					button.click();
 					continue;
 				}
 

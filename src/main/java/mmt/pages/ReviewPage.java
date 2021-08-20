@@ -3,14 +3,13 @@ package mmt.pages;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-
-
+import org.openqa.selenium.WebDriver;
 
 import mmt.bo.FillGuestDetailsBO;
 import mmt.utilities.ScreenshotUtil;
 import mmt.utilities.TestDataGenerator;
 
-public class ReviewPage extends BasePage {
+public class ReviewPage  extends BasePage{
 
 	Logger logger = LogManager.getLogger(SearchPage.class);
 
@@ -23,6 +22,7 @@ public class ReviewPage extends BasePage {
 
 	//Base page Obj with 15mins wait
 	BasePage base = new BasePage(15);
+	
 
 	
 	/**

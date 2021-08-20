@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import mmt.utilities.ScreenshotUtil;
 
@@ -17,6 +18,7 @@ public class PaymentPage extends BasePage {
 
 	// Basepage object with wait time 15sec
 	BasePage base = new BasePage(15);
+	
 
 	// To get details from the confirmation text.
 	// Reading checkin and checkout dates.

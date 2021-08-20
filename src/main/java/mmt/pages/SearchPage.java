@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constants.StarRating;
 
-public class SearchPage extends BasePage {
+public class SearchPage  extends BasePage {
 
 	Logger logger = LogManager.getLogger(SearchPage.class);
 //Page element locators 
@@ -32,6 +32,7 @@ public class SearchPage extends BasePage {
 
 	//BasePage obj with wait time15
 	BasePage base = new BasePage(15);
+	
 
 	//To control the price scroller present in the search page
 	public void scrollControl(int min, int max, By by) {
@@ -51,6 +52,10 @@ public class SearchPage extends BasePage {
 
 		logger.info("Moved the slider");
 
+	}
+	
+	public void scrollControlBy() {
+		base.slider(price_Selector);
 	}
 
 	//To select the rating 

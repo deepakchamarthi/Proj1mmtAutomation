@@ -53,6 +53,8 @@ public class HomePage extends BasePage {
 
 	// Creating object for BasePage with 15sec wait
 	BasePage base = new BasePage(15);
+	
+	
 
 	// Creating object of HomePageBO to set and get data
 	HomePageBO home = new HomePageBO();
