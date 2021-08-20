@@ -89,13 +89,7 @@ Files         | Purpose
 TestSuiteHotelBooking | 1. CompleteFlowTest 2.AssertBookingSumm  ary 
 CheckRoomAllocation | Assertions to check booking summary is matching with input data or not.
 
-
-
-
-
-
-
-####HTML code
+####TestNG Configuration to run
 
 ```html
 <!DOCTYPE html>
