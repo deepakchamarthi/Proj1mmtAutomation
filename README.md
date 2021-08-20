@@ -16,16 +16,10 @@ mmt automation is built on Test Driven methodology. Makemytrip.com/hotels url ta
 - **Flexible** with lot of configurable parameters. Complete List is given below.
 
 
-
-
-
-
-
 Image:
 FrameWork Structure
-
-![](https://ibb.co/Q6vSTt7)
-
+Please refer the screenshot placed in the main folder 
+![](https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/FrameWorkScreenshot.PNG)
 
 
 ### Folder main/java/constants: Files and Purpose
@@ -98,16 +92,6 @@ CheckRoomAllocation | Assertions to check booking summary is matching with input
 
 
 
-```flow
-st=>start: Login
-op=>operation: Login operation
-cond=>condition: Successful Yes or No?
-e=>end: To admin
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
 
 
 
@@ -116,13 +100,25 @@ cond(no)->op
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <mate charest="utf-8" />
-        <title>Hello world!</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-    </body>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="testsuitehotelbooking">
+
+
+	<test name="Tests">
+		<classes>
+			<class name="testcases.CompleteFlowTest">
+
+			</class>
+		</classes>
+	</test>
+
+	<suite-files>
+		<suite-file
+			path="C:\Users\Priyanka\eclipse-workspace\proj1mmt\src\test\resources\mmtAssertions.xml" />
+
+	</suite-files>
+</suite>
 </html>
 ```
 
