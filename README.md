@@ -115,8 +115,6 @@ CheckRoomAllocation | Assertions to check booking summary is matching with input
 -------------
 
 ```html
-<!DOCTYPE html>
-<html>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="testsuitehotelbooking">
@@ -132,7 +130,7 @@ CheckRoomAllocation | Assertions to check booking summary is matching with input
 
 	<suite-files>
 		<suite-file
-			path="C:\Users\Priyanka\eclipse-workspace\proj1mmt\src\test\resources\mmtAssertions.xml" />
+			path="mmtAssertions.xml" />
 
 	</suite-files>
 </suite>
