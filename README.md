@@ -31,7 +31,7 @@ mmt automation is built on Test Driven methodology. Makemytrip.com/hotels url ta
     + To Verify the Guests count is correct or not on the RoomSelectionPage
       *proj1mmt\src\test\resources\CheckRoomAllocationDetails.xml*
 	  
-![](https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/FrameWorkScreenshot.PNG)	  
+![](https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/TestSuite.gif)	  
 
 
 ### FrameWork Screenshot:
