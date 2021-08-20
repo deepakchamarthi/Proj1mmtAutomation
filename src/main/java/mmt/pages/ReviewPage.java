@@ -3,8 +3,6 @@ package mmt.pages;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 import mmt.bo.FillGuestDetailsBO;
 import mmt.utilities.ScreenshotUtil;
 import mmt.utilities.TestDataGenerator;

@@ -4,7 +4,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import mmt.drivermanager.DriverFactory;
-import mmt.pages.BasePage;
 import mmt.pages.HomePage;
 import mmt.pages.RoomSelectionPage;
 

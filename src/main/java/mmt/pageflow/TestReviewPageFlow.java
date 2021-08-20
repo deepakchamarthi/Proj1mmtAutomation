@@ -1,13 +1,7 @@
 package mmt.pageflow;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-
 import mmt.bo.FillGuestDetailsBO;
-import mmt.bo.PageURL;
-import mmt.drivermanager.DriverFactory;
 import mmt.pages.ReviewPage;
-import mmt.pages.RoomSelectionPage;
 
 public class TestReviewPageFlow {
 

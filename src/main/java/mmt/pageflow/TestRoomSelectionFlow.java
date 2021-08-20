@@ -1,11 +1,7 @@
 package mmt.pageflow;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-
 import mmt.drivermanager.DriverFactory;
 import mmt.pages.RoomSelectionPage;
-import mmt.pages.SearchPage;
 
 //For Testing puropse Not in Use
 public class TestRoomSelectionFlow {

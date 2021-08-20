@@ -1,12 +1,6 @@
 package mmt.pageflow;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-
-import mmt.bo.PageURL;
-import mmt.drivermanager.DriverFactory;
 import mmt.pages.RoomSelectionPage;
-import mmt.pages.SearchPage;
 
 public class RoomPageFlow {
 

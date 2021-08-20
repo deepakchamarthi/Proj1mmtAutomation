@@ -1,23 +1,11 @@
 package mmt.pageflow;
 
-import java.util.concurrent.TimeUnit;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import constants.StarRating;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import mmt.bo.PageURL;
-import mmt.drivermanager.DriverFactory;
-import mmt.pages.HomePage;
 import mmt.pages.SearchPage;
 
 public class SearchPageFlow {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 
 		DriverFactory.initiateDriver();
 		SearchPage search = new SearchPage();
@@ -25,11 +13,11 @@ public class SearchPageFlow {
 		search.openPage(url.searchPageURL);
 
 		run_SearchPage();
-	} 
+	} */
 
 	
 	//Runner to run all the element interaction methods in SearchPage ( page2)
-	public  static void run_SearchPage() {
+	public   void run_SearchPage() {
 
 		SearchPage search = new SearchPage();
 

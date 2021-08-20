@@ -6,8 +6,6 @@ import java.util.List;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 import mmt.utilities.ScreenshotUtil;
 
 public class PaymentPage extends BasePage {

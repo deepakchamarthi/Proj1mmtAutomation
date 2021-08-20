@@ -12,8 +12,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import mmt.drivermanager.DriverFactory;
-import mmt.pages.BasePage;
 import mmt.pages.SearchPage;
 
 public class ScreenshotUtil {

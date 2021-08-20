@@ -1,13 +1,5 @@
 package mmt.pageflow;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-
-import mmt.drivermanager.DriverFactory;
 import mmt.pages.HomePage;
 
 //The class contain flow to test MakeMyTrip/hotels home page.

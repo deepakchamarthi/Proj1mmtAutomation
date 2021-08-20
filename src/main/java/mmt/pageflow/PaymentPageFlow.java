@@ -1,7 +1,5 @@
 package mmt.pageflow;
 
-import mmt.bo.PageURL;
-import mmt.drivermanager.DriverFactory;
 import mmt.pages.PaymentPage;
 
 public class PaymentPageFlow {
