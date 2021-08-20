@@ -12,7 +12,7 @@ mmt automation is built on Test Driven methodology. Makemytrip.com/hotels url ta
 - **Complete Flow** Book Hotel in *configurable* city with *configurable* checkin/checkout dates and with *configurable* guests count
 - Automtically filters hotels with *configurable* start rating
 - Assertion Flow checks if the booking is happening correctly with the right number of guests
-- Works on any browser. Currently it is user configurable between Chrome and FireFox
+- **Compatability** works with any browser. Currently it is user configurable between Chrome and FireFox
 - **Highly efficient** and **Fastest** way to boook the hotel. Neither*Thread.sleep* nor *implicit wait* is used. 
 - **Flexible** with lot of configurable parameters. Complete List is given below.
 
@@ -22,7 +22,7 @@ mmt automation is built on Test Driven methodology. Makemytrip.com/hotels url ta
                 
 + **Java Way**
 	+ Execute the below program for complete flow test
-	*proj1mmt\src\main\java\mmt\pageflow\StartUpFlow.java *
+	*proj1mmt\src\main\java\mmt\pageflow\StartUpFlow.java*
 + **TestNG - TestCases**
     + For Assertions and CompleteFlow. Run this config:
       *proj1mmt\src\test\resources\mmtAssertions.xml*
@@ -138,6 +138,14 @@ CheckRoomAllocation | Assertions to check booking summary is matching with input
 </suite>
 </html>
 ```
+
+### TestData
+- Tested makemytrip/hotel multiletimes with Chrome and Firefox during and after completion of the framework. No open issues , but there is a scope of improvement in configrability and handling false scenarios.
+
+### Pending
+- Have to change access modifiers in some classes 
+- Clean up imports, some unused imports are present in the classes
+- Data provider can be added
 
 
 
