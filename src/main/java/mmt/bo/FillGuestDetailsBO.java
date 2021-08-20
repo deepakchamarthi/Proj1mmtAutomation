@@ -68,12 +68,19 @@ public class FillGuestDetailsBO {
 		
 	}
 	
+	/**
+	 * 
+	 * @param guests = Guest Details from FillGuestDetailsBO Class
+	 */
+	//TestDataGenerator method to fill guests details.
 	public void filldetails(FillGuestDetailsBO guests)
 	{
 		TestDataGenerator.generateGuestData(guests);
 		
 	}
 	
+	
+	//For Testing the data. Commented. 
 	/*public static void main(String args[])
 	{
 		

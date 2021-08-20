@@ -20,7 +20,7 @@ import constants.StarRating;
 public class SearchPage extends BasePage {
 
 	Logger logger = LogManager.getLogger(SearchPage.class);
-
+//Page element locators 
 	public static By hotel_List = By.cssSelector("[class*='listingRow ']");
 	public static By price_Selector = By.cssSelector("[role='slider'][aria-valuemin='0']");
 	public static By rating_Checkbox4 = By.xpath("//p[text()='4 Star']");
@@ -30,8 +30,10 @@ public class SearchPage extends BasePage {
 	public static By rating_Checkbox5 = By.xpath("//p[text()='5 Star']");
 	public static By Viewmore_Link = By.xpath("//div[@id='STAR_CATEGORY']//span[@id='hlistpg_proptypes_show_more']");
 
+	//BasePage obj with wait time15
 	BasePage base = new BasePage(15);
 
+	//To control the price scroller present in the search page
 	public void scrollControl(int min, int max, By by) {
 
 		base.waitForElementToBeVisible(by);
@@ -51,6 +53,8 @@ public class SearchPage extends BasePage {
 
 	}
 
+	//To select the rating 
+	//The Enum is used to represent the available rating. Switch case to select on the correct checkbox  configurable startrating
 	public void startRating(StarRating sRate) {
 
 		try {
@@ -99,7 +103,7 @@ public class SearchPage extends BasePage {
 			}
 		}
 
-		// logger.info("Clicked on the 4 Star (Try)");
+	
 
 		catch (Exception e) {
 			try {
@@ -115,12 +119,13 @@ public class SearchPage extends BasePage {
 		}
 
 	}
+	
+	//HotelSelection
+	//Selects the 5th hotel from the available list
+	//If there are less hotels than 5, then closest to the 5th hotel will be selected.( i.e 4) and so on.
 
 	public void selectHotel(By by, int hotelPosition) {
-		// WebDriverWait wait = new WebDriverWait(driver, 10, 200);
-
-		// WebElement searchBox =
-		// wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		
 		try {
 
 			base.waitForElementToBeVisible(by);
@@ -168,6 +173,8 @@ public class SearchPage extends BasePage {
 
 	}
 
+	
+	//Method to get the number of hotels displayed on the page.
 	public int getNoOfHotels(By by) {
 
 		int hotelCounter = 0;
@@ -182,6 +189,8 @@ public class SearchPage extends BasePage {
 
 	}
 
+	//Since a newtab will be displayed after clicking on particular hotel
+	//This method helps to change the control to the new tab
 	public void switchToNewTab() {
 
 		try {

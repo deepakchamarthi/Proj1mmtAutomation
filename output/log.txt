@@ -1,44 +1,127 @@
-[13:33:37.431] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:56) - browser's value is :chrome
-[13:33:37.439] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:56) - baseUrl's value is :https://www.makemytrip.com
-[13:33:37.440] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:56) - browser's value is :chrome
-[13:33:40.614] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:56) - baseUrl's value is :https://www.makemytrip.com
-[13:33:40.620] INFO   mmt.pages.BasePage.openPage(BasePage.java:35)                                    - opening the urlhttps://www.makemytrip.com/hotels
-[13:33:49.451] INFO   mmt.pageflow.StartUpFlow.main(StartUpFlow.java:21)                               -  URL opened
-[13:33:49.454] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:56) - baseUrl's value is :https://www.makemytrip.com
-[13:33:49.455] INFO   mmt.pages.BasePage.openPage(BasePage.java:35)                                    - opening the urlhttps://www.makemytrip.com/hotels
-[13:33:53.871] INFO   mmt.pages.HomePage.selectCity(HomePage.java:73)                                  - Sent City name as:Delhi
-[13:33:54.908] INFO   mmt.pages.HomePage.selectCity(HomePage.java:85)                                  - city selected
-[13:33:55.503] INFO   mmt.pages.HomePage.clickOnChkInChekOut(HomePage.java:138)                        - clicked checkin
-[13:33:55.739] INFO   mmt.pages.HomePage.clickondate(HomePage.java:153)                                - Clicked on 2021Aug25
-[13:33:55.972] INFO   mmt.pages.HomePage.clickondate(HomePage.java:153)                                - Clicked on 2021Aug31
-[13:33:56.355] INFO   mmt.pages.HomePage.clickOnguests(HomePage.java:259)                              - clicked on Guest
-[13:33:56.483] INFO   mmt.pages.HomePage.SelectGuestCount(HomePage.java:204)                           - Clicked on Adults
-[13:33:56.624] INFO   mmt.pages.HomePage.SelectGuestCount(HomePage.java:210)                           - Clicked on Children
-[13:33:56.958] INFO   mmt.pages.HomePage.SelectGuestCount(HomePage.java:223)                           - Selected0 Children Age as
-[13:33:57.227] INFO   mmt.pages.HomePage.SelectGuestCount(HomePage.java:223)                           - Selected1 Children Age as
-[13:33:57.553] INFO   mmt.pages.HomePage.SelectGuestCount(HomePage.java:223)                           - Selected2 Children Age as
-[13:33:57.720] INFO   mmt.pages.HomePage.selectApply(HomePage.java:268)                                - Clicked on Apply
-[13:33:57.933] INFO   mmt.pages.HomePage.travelReson(HomePage.java:285)                                - Clicked on TravelFor
-[13:33:57.984] INFO   mmt.pages.HomePage.travelReson(HomePage.java:290)                                - Clicked on Leisure
-[13:33:58.136] INFO   mmt.pages.HomePage.submit(HomePage.java:299)                                     - Clicked on Submit
-[13:34:02.562] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:85)               -  Taken Screenshot. File name: Screenshot_HomePage_2
-[13:34:02.563] INFO   mmt.pageflow.StartUpFlow.main(StartUpFlow.java:26)                               - Home Page Done
-[13:34:02.879] INFO   mmt.pages.SearchPage.scrollControl(SearchPage.java:42)                           - Clicked on the slider
-[13:34:03.425] INFO   mmt.pages.SearchPage.scrollControl(SearchPage.java:50)                           - Moved the slider
-[13:34:03.884] INFO   mmt.pages.SearchPage.startRating(SearchPage.java:88)                             - Clicked on  4 Star 
-[13:34:05.528] INFO   mmt.pages.SearchPage.selectHotel(SearchPage.java:130)                            - Number of hotels found: 10
-[13:34:06.098] INFO   mmt.pages.SearchPage.selectHotel(SearchPage.java:152)                            - clicked on Hotel number: 5from the list of  10 Hotels (elf2)
-[13:34:06.195] INFO   mmt.pages.SearchPage.switchToNewTab(SearchPage.java:195)                         - switched to new tab
-[13:34:06.196] INFO   mmt.pageflow.StartUpFlow.main(StartUpFlow.java:29)                               - Search Page Done
-[13:34:09.155] INFO   mmt.pages.RoomSelectionPage.clickRooms(RoomSelectionPage.java:40)                - opened Rooms link
-[13:34:11.671] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:85)               -  Taken Screenshot. File name: Screenshot_RoomSelectionPage_3
-[13:34:11.673] ERROR  mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:170)                - Hotel Completely Booked. Please Start over by changing Dates
-[13:34:11.998] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:85)               -  Taken Screenshot. File name: Screenshot_RoomSelectionPage_4
-[13:34:11.998] INFO   mmt.pageflow.StartUpFlow.main(StartUpFlow.java:33)                               - Room Page Done
-[13:34:15.939] INFO   mmt.pages.ReviewPage.fillDetails(ReviewPage.java:35)                             - Data entered 
-[13:34:16.155] INFO   mmt.pages.ReviewPage.clickPay(ReviewPage.java:50)                                - Clicked Pay
-[13:34:16.482] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:85)               -  Taken Screenshot. File name: Screenshot_ReviewPage_5
-[13:34:16.482] INFO   mmt.pageflow.StartUpFlow.main(StartUpFlow.java:37)                               - Review Page Done
-[13:34:19.899] INFO   mmt.pages.PaymentPage.getDetails(PaymentPage.java:32)                            - Check in: Wed, 25 Aug'21CheckOut: Tue, 31 Aug'21
-[13:34:21.867] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:85)               -  Taken Screenshot. File name: Screenshot_PayementPage_6
-[13:34:21.867] INFO   mmt.pageflow.StartUpFlow.main(StartUpFlow.java:41)                               - Payment Page Done
+[09:48:56.964] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - browser's value is :chrome
+[09:48:56.975] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - baseUrl's value is :https://www.makemytrip.com
+[09:48:56.976] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - browser's value is :chrome
+[09:48:59.613] INFO   testcases.AssertBookingSummary.browserOpen(AssertBookingSummary.java:31)         - Driver opened on Thread ID::1
+[09:48:59.635] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - baseUrl's value is :https://www.makemytrip.com
+[09:48:59.640] INFO   mmt.pages.BasePage.openPage(BasePage.java:38)                                    - opening the urlhttps://www.makemytrip.com/hotels
+[09:49:11.001] INFO   mmt.pages.HomePage.selectCity(HomePage.java:103)                                 - Sent City name as:Mumbai
+[09:49:13.156] INFO   mmt.pages.HomePage.selectCity(HomePage.java:115)                                 - city selected
+[09:49:14.135] INFO   mmt.pages.HomePage.clickOnChkInChekOut(HomePage.java:165)                        - clicked checkin
+[09:49:14.260] INFO   mmt.pages.HomePage.clickondate(HomePage.java:192)                                - Clicked on 2021Aug25
+[09:49:14.475] INFO   mmt.pages.HomePage.clickondate(HomePage.java:192)                                - Clicked on 2021Aug31
+[09:49:14.867] INFO   mmt.pages.HomePage.clickOnguests(HomePage.java:384)                              - clicked on Guest
+[09:49:14.999] INFO   mmt.pages.HomePage.SelectGuestCount(HomePage.java:296)                           - Clicked on Adults
+[09:49:15.134] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:321)                           - Clicked on Children
+[09:49:15.442] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected0 Children Age as 2
+[09:49:15.657] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected1 Children Age as 9
+[09:49:15.864] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected2 Children Age as 5
+[09:49:16.010] INFO   mmt.pages.HomePage.selectApply(HomePage.java:393)                                - Clicked on Apply
+[09:49:16.209] INFO   mmt.pages.HomePage.travelReson(HomePage.java:410)                                - Clicked on TravelFor
+[09:49:16.278] INFO   mmt.pages.HomePage.travelReson(HomePage.java:415)                                - Clicked on Leisure
+[09:49:16.458] INFO   mmt.pages.HomePage.submit(HomePage.java:424)                                     - Clicked on Submit
+[09:49:41.935] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_HomePage_2
+[09:49:41.936] INFO   testcases.AssertBookingSummary.checkBookingSummary(AssertBookingSummary.java:43) - Home Page Test Completed
+[09:49:42.293] INFO   mmt.pages.SearchPage.scrollControl(SearchPage.java:44)                           - Clicked on the slider
+[09:49:42.703] INFO   mmt.pages.SearchPage.scrollControl(SearchPage.java:52)                           - Moved the slider
+[09:49:43.276] INFO   mmt.pages.SearchPage.startRating(SearchPage.java:92)                             - Clicked on  4 Star 
+[09:49:45.202] INFO   mmt.pages.SearchPage.selectHotel(SearchPage.java:135)                            - Number of hotels found: 10
+[09:49:45.651] INFO   mmt.pages.SearchPage.selectHotel(SearchPage.java:157)                            - clicked on Hotel number: 5from the list of  10 Hotels (elf2)
+[09:49:45.672] INFO   mmt.pages.SearchPage.switchToNewTab(SearchPage.java:204)                         - switched to new tab
+[09:49:45.673] INFO   testcases.AssertBookingSummary.checkBookingSummary(AssertBookingSummary.java:47) - Search Page Done
+[09:49:50.102] INFO   mmt.pages.RoomSelectionPage.clickRooms(RoomSelectionPage.java:39)                - opened Rooms link
+[09:49:50.304] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:135)                - bookCmbo_Button found
+[09:49:50.339] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:141)                - 1
+[09:49:50.533] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:144)                - combo Button clicked
+[09:49:50.533] INFO   testcases.AssertBookingSummary.checkBookingSummary(AssertBookingSummary.java:52) - Room Page Done
+[09:50:11.677] ERROR  mmt.pages.ReviewPage.fillDetails(ReviewPage.java:49)                             - problem with filling data. Please check the input data
+[09:50:32.254] ERROR  mmt.pages.ReviewPage.clickPay(ReviewPage.java:65)                                - problem with clicking on Pay
+[09:50:32.414] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_ReviewPage_3
+[09:50:32.414] INFO   testcases.AssertBookingSummary.checkBookingSummary(AssertBookingSummary.java:56) - Review Page Done
+[09:50:32.415] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - baseUrl's value is :https://www.makemytrip.com
+[09:50:53.021] ERROR  mmt.pages.PaymentPage.getDetails(PaymentPage.java:53)                            - problem with getting details
+[09:50:53.592] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - browser's value is :chrome
+[09:50:53.593] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - baseUrl's value is :https://www.makemytrip.com
+[09:50:53.593] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - browser's value is :chrome
+[09:50:54.837] INFO   testcases.CompleteFlowTest.browserOpen(CompleteFlowTest.java:26)                 - Driver opened on Thread ID::1
+[09:50:54.839] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - baseUrl's value is :https://www.makemytrip.com
+[09:50:54.840] INFO   mmt.pages.BasePage.openPage(BasePage.java:38)                                    - opening the urlhttps://www.makemytrip.com/hotels
+[09:51:05.695] INFO   mmt.pages.HomePage.selectCity(HomePage.java:103)                                 - Sent City name as:Mumbai
+[09:51:08.269] INFO   mmt.pages.HomePage.selectCity(HomePage.java:115)                                 - city selected
+[09:51:09.060] INFO   mmt.pages.HomePage.clickOnChkInChekOut(HomePage.java:165)                        - clicked checkin
+[09:51:09.202] INFO   mmt.pages.HomePage.clickondate(HomePage.java:192)                                - Clicked on 2021Aug25
+[09:51:09.394] INFO   mmt.pages.HomePage.clickondate(HomePage.java:192)                                - Clicked on 2021Aug31
+[09:51:09.799] INFO   mmt.pages.HomePage.clickOnguests(HomePage.java:384)                              - clicked on Guest
+[09:51:09.884] INFO   mmt.pages.HomePage.SelectGuestCount(HomePage.java:296)                           - Clicked on Adults
+[09:51:09.990] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:321)                           - Clicked on Children
+[09:51:10.253] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected0 Children Age as 2
+[09:51:10.457] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected1 Children Age as 9
+[09:51:10.706] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected2 Children Age as 5
+[09:51:10.850] INFO   mmt.pages.HomePage.selectApply(HomePage.java:393)                                - Clicked on Apply
+[09:51:11.038] INFO   mmt.pages.HomePage.travelReson(HomePage.java:410)                                - Clicked on TravelFor
+[09:51:11.079] INFO   mmt.pages.HomePage.travelReson(HomePage.java:415)                                - Clicked on Leisure
+[09:51:11.226] INFO   mmt.pages.HomePage.submit(HomePage.java:424)                                     - Clicked on Submit
+[09:51:29.784] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_HomePage_4
+[09:51:29.784] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:34)               - Home Page Test Completed
+[09:51:30.061] INFO   mmt.pages.SearchPage.scrollControl(SearchPage.java:44)                           - Clicked on the slider
+[09:51:30.530] INFO   mmt.pages.SearchPage.scrollControl(SearchPage.java:52)                           - Moved the slider
+[09:51:31.052] INFO   mmt.pages.SearchPage.startRating(SearchPage.java:92)                             - Clicked on  4 Star 
+[09:51:33.314] INFO   mmt.pages.SearchPage.selectHotel(SearchPage.java:135)                            - Number of hotels found: 10
+[09:51:33.674] INFO   mmt.pages.SearchPage.selectHotel(SearchPage.java:157)                            - clicked on Hotel number: 5from the list of  10 Hotels (elf2)
+[09:51:33.694] INFO   mmt.pages.SearchPage.switchToNewTab(SearchPage.java:204)                         - switched to new tab
+[09:51:33.694] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:38)               - Search Page Done
+[09:51:42.908] INFO   mmt.pages.RoomSelectionPage.clickRooms(RoomSelectionPage.java:39)                - opened Rooms link
+[09:51:42.995] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:135)                - bookCmbo_Button found
+[09:51:43.018] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:141)                - 1
+[09:51:43.305] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:144)                - combo Button clicked
+[09:51:43.306] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:43)               - Room Page Done
+[09:52:04.093] ERROR  mmt.pages.ReviewPage.fillDetails(ReviewPage.java:49)                             - problem with filling data. Please check the input data
+[09:52:24.624] ERROR  mmt.pages.ReviewPage.clickPay(ReviewPage.java:65)                                - problem with clicking on Pay
+[09:52:24.761] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_ReviewPage_5
+[09:52:24.761] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:47)               - Review Page Done
+[09:52:45.314] ERROR  mmt.pages.PaymentPage.getDetails(PaymentPage.java:53)                            - problem with getting details
+[09:52:45.315] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:52)               - Payment Page Done
+[09:52:45.940] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - browser's value is :chrome
+[09:52:45.941] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - baseUrl's value is :https://www.makemytrip.com
+[09:52:45.942] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - browser's value is :chrome
+[09:52:47.438] INFO   testcases.CompleteFlowTest.browserOpen(CompleteFlowTest.java:26)                 - Driver opened on Thread ID::1
+[09:52:47.441] INFO   mmt.filereaders.ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.java:59) - baseUrl's value is :https://www.makemytrip.com
+[09:52:47.442] INFO   mmt.pages.BasePage.openPage(BasePage.java:38)                                    - opening the urlhttps://www.makemytrip.com/hotels
+[09:52:59.024] INFO   mmt.pages.HomePage.selectCity(HomePage.java:103)                                 - Sent City name as:Mumbai
+[09:53:01.589] INFO   mmt.pages.HomePage.selectCity(HomePage.java:115)                                 - city selected
+[09:53:02.155] INFO   mmt.pages.HomePage.clickOnChkInChekOut(HomePage.java:165)                        - clicked checkin
+[09:53:02.257] INFO   mmt.pages.HomePage.clickondate(HomePage.java:192)                                - Clicked on 2021Aug25
+[09:53:02.456] INFO   mmt.pages.HomePage.clickondate(HomePage.java:192)                                - Clicked on 2021Aug31
+[09:53:02.923] INFO   mmt.pages.HomePage.clickOnguests(HomePage.java:384)                              - clicked on Guest
+[09:53:03.092] INFO   mmt.pages.HomePage.SelectGuestCount(HomePage.java:296)                           - Clicked on Adults
+[09:53:03.231] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:321)                           - Clicked on Children
+[09:53:03.471] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected0 Children Age as 2
+[09:53:03.762] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected1 Children Age as 9
+[09:53:03.984] INFO   mmt.pages.HomePage.setChildrenCount(HomePage.java:336)                           - Selected2 Children Age as 5
+[09:53:04.122] INFO   mmt.pages.HomePage.selectApply(HomePage.java:393)                                - Clicked on Apply
+[09:53:04.377] INFO   mmt.pages.HomePage.travelReson(HomePage.java:410)                                - Clicked on TravelFor
+[09:53:04.473] INFO   mmt.pages.HomePage.travelReson(HomePage.java:415)                                - Clicked on Leisure
+[09:53:04.686] INFO   mmt.pages.HomePage.submit(HomePage.java:424)                                     - Clicked on Submit
+[09:53:39.596] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_HomePage_6
+[09:53:39.597] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:34)               - Home Page Test Completed
+[09:53:39.879] INFO   mmt.pages.SearchPage.scrollControl(SearchPage.java:44)                           - Clicked on the slider
+[09:53:40.383] INFO   mmt.pages.SearchPage.scrollControl(SearchPage.java:52)                           - Moved the slider
+[09:53:41.250] INFO   mmt.pages.SearchPage.startRating(SearchPage.java:92)                             - Clicked on  4 Star 
+[09:53:43.229] INFO   mmt.pages.SearchPage.selectHotel(SearchPage.java:135)                            - Number of hotels found: 10
+[09:53:43.697] INFO   mmt.pages.SearchPage.selectHotel(SearchPage.java:157)                            - clicked on Hotel number: 5from the list of  10 Hotels (elf2)
+[09:53:43.719] INFO   mmt.pages.SearchPage.switchToNewTab(SearchPage.java:204)                         - switched to new tab
+[09:53:43.719] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:38)               - Search Page Done
+[09:53:47.214] INFO   mmt.pages.RoomSelectionPage.clickRooms(RoomSelectionPage.java:39)                - opened Rooms link
+[09:53:47.595] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:135)                - bookCmbo_Button found
+[09:53:47.631] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:141)                - 1
+[09:53:49.368] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_RoomSelectionPage_7
+[09:53:49.369] INFO   mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:158)                - catch ->try
+[09:53:49.369] ERROR  mmt.pages.RoomSelectionPage.bookCombo(RoomSelectionPage.java:164)                - Hotel Completely Booked. Please Start over by changing Dates
+[09:53:49.522] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_RoomSelectionPage_8
+[09:53:49.523] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:43)               - Room Page Done
+[09:54:00.877] INFO   mmt.pages.ReviewPage.fillDetails(ReviewPage.java:43)                             - Data entered 
+[09:54:01.080] INFO   mmt.pages.ReviewPage.clickPay(ReviewPage.java:59)                                - Clicked Pay
+[09:54:01.358] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_ReviewPage_9
+[09:54:01.358] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:47)               - Review Page Done
+[09:54:18.194] INFO   mmt.pages.PaymentPage.getDetails(PaymentPage.java:44)                            - Check-in Date : Wed, 25 Aug'21Check-Out Date: Tue, 31 Aug'21
+[09:54:20.726] INFO   mmt.utilities.ScreenshotUtil.getScreenshot(ScreenshotUtil.java:73)               -  Taken Screenshot. File name: Screenshot_PayementPage_10
+[09:54:20.726] INFO   testcases.CompleteFlowTest.bookHotelFlow(CompleteFlowTest.java:52)               - Payment Page Done

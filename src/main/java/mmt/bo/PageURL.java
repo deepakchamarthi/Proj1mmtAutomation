@@ -1,5 +1,12 @@
 package mmt.bo;
+/**
+ * 
+ * @author Deepak
+ *
+ */
 
+//strings containing , PageURLs for testing individual Pages.
+//These URLs are not used in the complete flow.
 public class PageURL {
 
 	public String searchPageURL = "https://www.makemytrip.com/hotels/hotel-listing/?_uCurrency=INR&checkin=08252021&checkout=08312021&city=CTBOM&country=IN&filterData=HOTEL_PRICE%7C3000-20000&locusId=CTBOM&locusType=city&regionNearByExp=3&roomStayQualifier=4e3e4e3e5e&searchText=Mumbai%2C%20Maharashtra%2C%20India&visitorId=c036d02f-3795-430d-bae9-ebfa14103927";

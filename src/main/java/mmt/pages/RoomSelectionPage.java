@@ -14,7 +14,7 @@ import mmt.utilities.ScreenshotUtil;
 public class RoomSelectionPage extends BasePage {
 
 	Logger logger = LogManager.getLogger(SearchPage.class);
-
+//Page element locators
 	public static By rooms_Link = By.cssSelector("#detpg_hotel_rooms");
 	public static By check_count = By.cssSelector("[class*='comboTitle']");
 	public static By rooom_Header = By.cssSelector("[class='ddHeaderTitle']");
@@ -22,44 +22,45 @@ public class RoomSelectionPage extends BasePage {
 	public static By guestCount2 = By.cssSelector("[value='2 Adults 2 Children'] ");
 	public static By addRooms_Button = By.cssSelector("#detpg_multi_2_add_room");
 	public static By bookCmbo_Button = By.cssSelector("#detpg_book_combo_btn");
-	public static By pickAnotherDate_Button = By.cssSelector("#alternateDates_details");
-	
-	
 
+	public static By pickAnotherDate_Button = By.cssSelector("#alternateDates_details");
+
+//Base page Obj wait 15sec
 	BasePage base = new BasePage(15);
 
+	// Clicking Rooms link in the page
 	public void clickRooms() {
-		
-		try
-		{
-			
-		
-        base.waitForElementToBeVisible(rooms_Link);
-		base.click(rooms_Link);
 
-		logger.info("opened Rooms link");
-		}
-		catch(Exception e)
-		{
-			//base.waitForElementToBeVisible(pickAnotherDate_Button);
+		try {
+
+			base.waitForElementToBeVisible(rooms_Link);
+			base.click(rooms_Link);
+
+			logger.info("opened Rooms link");
+		} catch (Exception e) {
+			// base.waitForElementToBeVisible(pickAnotherDate_Button);
 			logger.error("Hotel Completely Booked. Please Start over by changing Dates");
 		}
 
 	}
 
+	//Get the values of guest info
+	//There is a pending implementation to extract the data of guests count and assert with the input guest count
+	
 	public void getValue() {
-		
+
 		WebElement ele = driver.findElement(By.id("guest"));
 		String innerHTML = ele.getAttribute("innerHTML");
-		
+
 		logger.info("Value is " + innerHTML);
 
 	}
 
+	//To verify the test of the guest count.
 	public void VerifyText()
 
 	{
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, 60, 200);
 		WebElement comboTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(check_count));
 		base.waitForElementToBeVisible(check_count);
@@ -79,6 +80,7 @@ public class RoomSelectionPage extends BasePage {
 		}
 	}
 
+	//Logic to select the room based on children and adult count displayed
 	public void click2audlts1ChildButton() {
 
 		base.waitForElementToBeVisible(rooom_Header);
@@ -91,19 +93,16 @@ public class RoomSelectionPage extends BasePage {
 			List<WebElement> values = driver.findElements(guestCount1);
 
 			for (WebElement value : values)
-				valueCounter++;		
-			
-			{  
+				valueCounter++;
+
+			{
 				base.click(addRooms_Button);
 
-				if (valueCounter== 1) {
-					
-										
+				if (valueCounter == 1) {
+
 					logger.info("Button clicked");
 					break;
-				}
-				else
-				{
+				} else {
 					logger.info("Button not clicked");
 				}
 
@@ -115,64 +114,56 @@ public class RoomSelectionPage extends BasePage {
 				value2Counter++;
 			if (value2Counter == 1) {
 				base.click(addRooms_Button);
-				
-				
+
 				logger.info("Button2 clicked");
 				break;
-			}
-			else
-			{
+			} else {
 				logger.info("Button not clicked");
 			}
 		}
 
 	}
+
 	
-	public void bookCombo()
-	{
-		
-	try
-	{
-		int counter =0;
-		base.waitForElementToBeVisible(bookCmbo_Button);
-		List<WebElement> buttonCombos = driver.findElements(bookCmbo_Button);
-		
-		for (WebElement button : buttonCombos) {
-		counter++;
-		if(counter==1)
-		{
-		    button.click();
-		    logger.info("combo Button clicked");
-		    break;
-	}
-	
-		else
-		{
-			continue;
-		}
-		
-	}
-	}
-	catch(Exception e)
-	{
-		try
-		{
-			WebElement comboButton = driver.findElement(bookCmbo_Button);
-			comboButton.click();
+	//booking button
+	public void bookCombo() {
+
+		try {
+			int counter = 0;
+			base.waitForElementToBeVisible(bookCmbo_Button);
+
+			logger.info("bookCmbo_Button found");
+			List<WebElement> buttonCombos = driver.findElements(bookCmbo_Button);
+
+			for (WebElement button : buttonCombos) {
+				counter++;
+				if (counter == 1) {
+					logger.info(counter);
+					button.click();
+
+					logger.info("combo Button clicked");
+					break;
+				}
+
+				else {
+					continue;
+				}
+
+			}
+		} catch (Exception e) {
+			try {
+				WebElement comboButton = driver.findElement(bookCmbo_Button);
+				comboButton.click();
+				ScreenshotUtil.getScreenshot(driver, "RoomSelectionPage");
+				logger.info("catch ->try");
+			} catch (Exception e1) {
+				logger.error("Hotel Completely Booked. Please Start over by changing Dates");
+			}
+
+			// base.waitForElementToBeVisible(pickAnotherDate_Button);
+			logger.error("Hotel Completely Booked. Please Start over by changing Dates");
 			ScreenshotUtil.getScreenshot(driver, "RoomSelectionPage");
 		}
-		catch(Exception e1)
-		{
-			logger.error("Hotel Completely Booked. Please Start over by changing Dates");
-		}
-		
-		//base.waitForElementToBeVisible(pickAnotherDate_Button);
-		logger.error("Hotel Completely Booked. Please Start over by changing Dates");
-		ScreenshotUtil.getScreenshot(driver, "RoomSelectionPage");
 	}
+
 }
-	
-}
-
-
-

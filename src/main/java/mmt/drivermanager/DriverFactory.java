@@ -5,38 +5,30 @@ import org.openqa.selenium.WebDriver;
 import mmt.drivermanager.browsertypes.ChromeDriverManager;
 import mmt.drivermanager.browsertypes.FireFoxManager;
 import mmt.filereaders.ConfigPropertiesReader;
-import mmt.filereaders.ConfigReader;
 
 
-
+//DriverFactory initiates the required driver
 public class DriverFactory {
 
 	public static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<WebDriver>();
-	
-	public static void main(String args[])
-	{
-		
+
+	public static void main(String args[]) {
+
 		initiateDriver();
 	}
-	
-	
 
 	public static void initiateDriver() {
 
 		WebDriver driver = null;
-		
-		ConfigPropertiesReader config = new ConfigPropertiesReader();
-		
-		String browserType = ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.configFilePath,"browser");
-		//String brows = ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.integration_envFilePath,"browser");
-		
-		
-		//String browserType="chrome";
-		
-		System.out.println(browserType);
-		
-		
 
+		ConfigPropertiesReader config = new ConfigPropertiesReader();
+
+		// Read browserType from config file.
+
+		String browserType = ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.configFilePath,
+				"browser");
+
+		//switch-case to initiate driver based on user selected browser type from config file.
 		switch (BrowserType.valueOf(browserType.toUpperCase())) {
 		case CHROME:
 			driver = new ChromeDriverManager().getDriver();
@@ -45,7 +37,7 @@ public class DriverFactory {
 			driver = new FireFoxManager().getDriver();
 			break;
 		default:
-			
+
 			throw new IllegalStateException("UnSupported Browser Type provided");
 		}
 

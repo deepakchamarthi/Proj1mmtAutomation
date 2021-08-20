@@ -1,5 +1,8 @@
 package mmt.pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -12,31 +15,43 @@ public class PaymentPage extends BasePage {
 
 	public static By details = By.cssSelector("[class='make-flex hrtl-center']");
 
+	// Basepage object with wait time 15sec
 	BasePage base = new BasePage(15);
 
-	public void getDetails()
+	// To get details from the confirmation text.
+	// Reading checkin and checkout dates.
+
+	// Getdetails of the guests checkin time to test with assertions.
+	// Returns the list of checkin and chkeckout dates - useful to compare with BO
+	// checkin checkout dates
+	public List<String> getDetails()
 
 	{
+		List<String> checkInOutDates = new ArrayList<String>();
 
-		try
-		{
-			
-		
-		base.waitForElementToBeVisible(details);
+		try {
 
-		String innerHTML = driver.findElement(details).getAttribute("innerHTML");
+			base.waitForElementToBeVisible(details);
 
-		String checkOutDate = innerHTML.substring(523, 537);
-		String checkInDate = innerHTML.substring(197, 211);
+			String innerHTML = driver.findElement(details).getAttribute("innerHTML");
 
-		logger.info("Check-in Date : " + checkInDate + "Check-Out Date: " + checkOutDate);
-		ScreenshotUtil.getScreenshot(driver, "PayementPage");
+			String checkOutDate = innerHTML.substring(523, 537);
+			String checkInDate = innerHTML.substring(197, 211);
+
+			checkInOutDates.add(checkInDate);
+			checkInOutDates.add(checkOutDate);
+
+			logger.info("Check-in Date : " + checkInDate + "Check-Out Date: " + checkOutDate);
+			ScreenshotUtil.getScreenshot(driver, "PayementPage");
+
+			return checkInOutDates;
+
 		}
-		
-		catch(Exception e)
-		{
-			
+
+		catch (Exception e) {
+
 			logger.error("problem with getting details");
+			return checkInOutDates;
 		}
 
 	}
