@@ -18,6 +18,7 @@ mmt automation is built on Test Driven methodology. Makemytrip.com/hotels url ta
 
 
 #### How to use this?
+-------------
                 
 + **Java Way**
 	+ Execute the below program for complete flow test
@@ -29,28 +30,8 @@ mmt automation is built on Test Driven methodology. Makemytrip.com/hotels url ta
      *proj1mmt\src\test\resources\TestSuiteHotelBooking.xml*
     + To Verify the Guests count is correct or not on the RoomSelectionPage
       *proj1mmt\src\test\resources\CheckRoomAllocationDetails.xml*
-
-
-### How to use this?
--------------
-
-1. Java Way
-Execute the below program for complete flow test
-
- >proj1mmt\src\main\java\mmt\pageflow\StartUpFlow.java 
-
-2. TestNG - TestCases 
-
- 2.1: For Assertions and CompleteFlow. Run this config:
-      proj1mmt\src\test\resources\mmtAssertions.xml
-
-  2.2:For Assertcions and CompleteFlow. Run this config:
-     proj1mmt\src\test\resources\TestSuiteHotelBooking.xml
-
-  2.3: To Verify the Guests count is correct or not on the RoomSelectionPage
-      proj1mmt\src\test\resources\CheckRoomAllocationDetails.xml
-
-
+	  
+![](https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/FrameWorkScreenshot.PNG)	  
 
 
 ### FrameWork Screenshot:
@@ -59,6 +40,9 @@ Execute the below program for complete flow test
 Please refer the screenshot placed in the main folder 
 ![](https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/FrameWorkScreenshot.PNG)
 
+
+### Contents
+-------------
 
 ### Folder main/java/constants: Files and Purpose
                     
@@ -127,7 +111,7 @@ Files         | Purpose
 TestSuiteHotelBooking | 1. CompleteFlowTest 2.AssertBookingSumm  ary 
 CheckRoomAllocation | Assertions to check booking summary is matching with input data or not.
 
-#### TestNG Configuration to run
+### TestNG Configuration to run
 -------------
 
 ```html
