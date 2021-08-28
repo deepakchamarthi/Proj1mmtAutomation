@@ -28,11 +28,7 @@ https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/src/test/java/te
 ![](https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/TestSuite.gif)	  
 
 
-### FrameWork Screenshot:
--------------
 
-Please refer the screenshot placed in the main folder 
-![](https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/FrameWorkScreenshot.PNG)
 
 
 ### Contents
