@@ -1,0 +1,15 @@
+1. Java Way
+Execute the below program for complete flow test
+
+ >proj1mmt\src\main\java\mmt\pageflow\StartUpFlow.java 
+
+2. TestNG - TestCases 
+
+ 2.1: For Assertions and CompleteFlow. Run this config:
+      proj1mmt\src\test\resources\mmtAssertions.xml
+
+  2.2:For Assertcions and CompleteFlow. Run this config:
+     proj1mmt\src\test\resources\TestSuiteHotelBooking.xml
+
+  2.3: To Verify the Guests count is correct or not on the RoomSelectionPage
+      proj1mmt\src\test\resources\CheckRoomAllocationDetails.xml
