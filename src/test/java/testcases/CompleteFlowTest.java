@@ -2,96 +2,96 @@ package testcases;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
 import mmt.drivermanager.DriverFactory;
-import mmt.pageflow.HomePageFlow;
 import mmt.pageflow.HomePageFlow1;
 import mmt.pageflow.PaymentPageFlow;
 import mmt.pageflow.RoomPageFlow;
-import mmt.pageflow.SearchPageFlow1;
+import mmt.pageflow.SearchPageFlow;
 import mmt.pageflow.TestReviewPageFlow;
 
+
+//This is complete flow test & Generates sample  Test Report under  output folder with name TestReport_timestamp.html
 public class CompleteFlowTest {
-	public static Logger logger = LogManager.getLogger(CompleteFlowTest.class);
 	
 	
+	static Logger logger = LogManager.getLogger(CompleteFlowTest.class);
+	static ExtentTest test;
+	static ExtentReports report;
 	
-	@BeforeMethod
-	public void browserOpen() {
-		DriverFactory.initiateDriver();
-		logger.info("Driver opened on Thread ID::" + Thread.currentThread().getId());
+	static String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+	
+	@BeforeClass
+	public static void startTest()
+	{
+	//configuring for Extent Reports	
+	report = new ExtentReports("output\\TestReport_"+timeStamp+".html",true);
+	test = report.startTest("CompleteFlowTest");
 	}
-			
+	
+		
 	
 	@Test
-	public void homePageFlow() {
+	public void bookHotelFlow() {
+		//OPen the browser
+		browserOpen();
+		
+		//checks all the pages
 		HomePageFlow1 hpf = new HomePageFlow1();
 		hpf.run();
 		logger.info("Home Page Test Completed");
+		test.log(LogStatus.PASS, "Home Page Test Completed");
 		
-		SearchPageFlow1 spf = new SearchPageFlow1();
+		SearchPageFlow spf = new SearchPageFlow();
 		spf.run_SearchPage();
 		logger.info("Search Page Done");
+		test.log(LogStatus.PASS, "Search Page Done");
 					
 		
 		RoomPageFlow rpf = new RoomPageFlow();
 		rpf.run_RoomSelectionPage();
 		logger.info("Room Page Done");
+		test.log(LogStatus.PASS, "Room Page Done");
 		
 		TestReviewPageFlow tpf = new TestReviewPageFlow();
 		tpf.run_ReviewPage();
 		logger.info("Review Page Done");
+		test.log(LogStatus.PASS, "Review Page Done");
 		
 		
 		PaymentPageFlow ppf = new PaymentPageFlow();
 		ppf.run_PaymentPage();
 		logger.info("Payment Page Done");
+		test.log(LogStatus.PASS, "Payment Page Done");
 		
 	}
-	/*
-	@Test(dependsOnMethods = {"homePageFlow"})
-	public void SearchPageFlow() throws InterruptedException {
-		SearchPageFlow1 spf = new SearchPageFlow1();
-		spf.run_SearchPage();
-		logger.info("Search Page Test Completed");
+	
+	//Open browser
+	public void browserOpen() {
+		DriverFactory.initiateDriver();
+		logger.info("Driver opened on Thread ID::" + Thread.currentThread().getId());
+		
+		
 	}
 	
-	
-	@Test(dependsOnMethods = {"SearchPageFlow"})
-	public void RoomPageFlow() throws InterruptedException {
-		RoomPageFlow rpf = new RoomPageFlow();
-		rpf.run_RoomSelectionPage();
-		logger.info("Room Page Test Completed");
-	}
-	
-	
-	@Test(dependsOnMethods = {"RoomPageFlow"})
-	public void ReviewPageFlow() throws InterruptedException {
-		TestReviewPageFlow tpf = new TestReviewPageFlow();
-		tpf.run_ReviewPage();
-		logger.info("Review Page Test Completed");
-	}
-	
-	@Test(dependsOnMethods = {"ReviewPageFlow"}, alwaysRun = true,priority = 5)
-	public void PaymentPageFlow() throws InterruptedException {
-		PaymentPageFlow ppf = new PaymentPageFlow();
-		ppf.run_PaymentPage();
-		logger.info("Payment Page Test Completed");
-	}
-	
-	
-	*/
-	
-	
-	
-	
-	@AfterMethod
+	//Close browser and Generate Report at folder: output
+	@AfterClass
 	public void closeBrowser() {
 		DriverFactory.getCurrentDriver().quit();
+		report.endTest(test);
+		report.flush();
 	}
 	
 

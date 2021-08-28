@@ -14,36 +14,39 @@ public class ConfigPropertiesReader {
 
 	static Logger logger = LogManager.getLogger(HomePage.class);
 
+	// FilePaths
 	public static String configFilePath = "C:\\Users\\Priyanka\\eclipse-workspace\\proj1mmt\\src\\main\\resources\\config.properties";
-	
 	public static Properties properties = new Properties();
-	
 	public static String integration_envFilePath = "C:\\Users\\Priyanka\\eclipse-workspace\\proj1mmt\\src\\main\\resources\\environment\\integration.properties";
 	public static String staging_envFilePath = "C:\\Users\\Priyanka\\eclipse-workspace\\proj1mmt\\src\\main\\resources\\environment\\integration.properties";
 
-	
-	public ConfigPropertiesReader()
-	{
-		getValueFromConfigFile(configFilePath,"browser");
-		getValueFromConfigFile(integration_envFilePath,"baseUrl");
-		
+	/**
+	 * to read the properties of the env and main config files.
+	 */
+	public ConfigPropertiesReader() {
+		getValueFromConfigFile(configFilePath, "browser");
+		getValueFromConfigFile(integration_envFilePath, "baseUrl");
 
-		//String environmentToRun = getProperty("environment");
-		//getValueFromConfigFile(String.format(envFilePath, environmentToRun));
-		
+		// String environmentToRun = getProperty("environment");
+		// getValueFromConfigFile(String.format(envFilePath, environmentToRun));
+
 	}
-	
+
+	// for testing. Ignore
 	public static void main(String args[]) {
-		//String environmentToRun = getProperty("environment");
-		getValueFromConfigFile(configFilePath,"browser");
-		getValueFromConfigFile(integration_envFilePath,"baseUrl");
-		
-		
-		//getValueFromConfigFile(String.format(envFilePath, environmentToRun));
-		
-		} 
-	
-	
+
+		getValueFromConfigFile(configFilePath, "browser");
+		getValueFromConfigFile(integration_envFilePath, "baseUrl");
+
+	}
+
+	/**
+	 * 
+	 * @param filePath = path of the configfile
+	 * @param key      = key from the provided configfile to retrive value.
+	 * @return in successful case it returns the value of the key in the config
+	 *         file.
+	 */
 
 	public static String getValueFromConfigFile(String filePath, String key) {
 
@@ -74,7 +77,7 @@ public class ConfigPropertiesReader {
 		}
 
 	}
-	
+
 	public static String getProperty(String propertyName) {
 		return properties.getProperty(propertyName);
 	}

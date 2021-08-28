@@ -12,13 +12,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import mmt.drivermanager.DriverFactory;
-import mmt.drivermanager.browsertypes.ChromeDriverManager;
+
+
+//This class in for Testing Purpose. CAN BE DELATED. IGNORE
 
 public class HomePageFlow {
 
@@ -35,10 +34,6 @@ public class HomePageFlow {
 
 		// open web page
 
-		
-		
-		
-		
 		driver.get("https://www.makemytrip.com/hotels/");
 		System.out.println("opened");
 		Thread.sleep(3000);
@@ -95,8 +90,7 @@ public class HomePageFlow {
 			}
 
 		}
-		driver.findElement(By.cssSelector("[class*='DayPicker-Month'][role='grid']:last-child"))
-				.click();
+		driver.findElement(By.cssSelector("[class*='DayPicker-Month'][role='grid']:last-child")).click();
 		selectDate(month_year, select_day);
 
 	}

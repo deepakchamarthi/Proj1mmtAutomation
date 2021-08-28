@@ -1,6 +1,5 @@
 package mmt.pages;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -8,7 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import mmt.bo.PageURL;
 import mmt.drivermanager.DriverFactory;
 
 public class DateSetter extends BasePage {
