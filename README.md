@@ -19,17 +19,11 @@ mmt automation is built on Test Driven methodology. Makemytrip.com/hotels url ta
 
 #### How to use this?
 -------------
-                
-+ **Java Way**
-	+ Execute the below program for complete flow test
-	*proj1mmt\src\main\java\mmt\pageflow\StartUpFlow.java*
-+ **TestNG - TestCases**
-    + For Assertions and CompleteFlow. Run this config:
-      *proj1mmt\src\test\resources\mmtAssertions.xml*
-    + For Assertcions and CompleteFlow. Run this config:
-     *proj1mmt\src\test\resources\TestSuiteHotelBooking.xml*
-    + To Verify the Guests count is correct or not on the RoomSelectionPage
-      *proj1mmt\src\test\resources\CheckRoomAllocationDetails.xml*
+1. Run test/java/testcases/CompleteFlowTest
+OR
+2. Run test/resources/TestSuiteHotelBooking.xml
+
+https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/src/test/java/testcases/CompleteFlowTest.java 
 	  
 ![](https://github.com/deepakchamarthi/Proj1mmtAutomation/blob/main/TestSuite.gif)	  
 
