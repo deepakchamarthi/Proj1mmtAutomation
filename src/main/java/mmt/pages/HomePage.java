@@ -49,7 +49,7 @@ public class HomePage extends BasePage {
 	public By childAge = By.cssSelector("[data-cy=childAge-1]");
 
 	// Creating object for BasePage with 15sec wait
-	BasePage base = new BasePage(15);
+	//BasePage base = new BasePage(15);
 	
 	
 
@@ -94,16 +94,16 @@ public class HomePage extends BasePage {
 	public void selectCity(By by) {
 		String cityName = home.getCityName();
 		try {
-			base.waitForElementToBeVisible(by);
+			waitForElementToBeVisible(by);
 
 			WebElement city = driver.findElement(By.id("city"));
 			city.sendKeys(cityName);
 
 			logger.info("Sent City name as:" + cityName);
-			WebElement cityList = base.waitForElementToBeVisible(citymenu_Text);
+			WebElement cityList = waitForElementToBeVisible(citymenu_Text);
 
 			cityList.sendKeys(cityName);
-			base.waitForElementToBeVisible(firstOptionCity);
+			waitForElementToBeVisible(firstOptionCity);
 //Using fluent time to wait until text is filled properly.
 			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
 					.pollingEvery(Duration.ofMillis(500)).ignoring(NoSuchElementException.class);
@@ -117,7 +117,7 @@ public class HomePage extends BasePage {
 		catch (Exception e) {
 
 			WebElement cityList = driver.findElement(citymenu_Text);
-			base.waitForElementToBeVisible(firstOptionCity);
+			waitForElementToBeVisible(firstOptionCity);
 			cityList.sendKeys(Keys.ARROW_DOWN);
 			cityList.sendKeys(Keys.RETURN);
 			logger.info("Seems spelling mistake, First suggestion selected");
@@ -126,25 +126,6 @@ public class HomePage extends BasePage {
 
 	}
 
-	/*
-	 * public void clickOnChkInChekOuttemp() {
-	 * 
-	 * try { base.waitForElementToBeVisible(checkIn_button); WebElement checkin =
-	 * driver.findElement(By.id("checkin"));
-	 * 
-	 * Actions actions = new Actions(driver);
-	 * 
-	 * actions.moveToElement(checkin).click().perform();
-	 * 
-	 * actions.moveToElement(checkin).click().perform();
-	 * logger.info("Clicked on Checkin Date"); // System.out.println("clicked");
-	 * 
-	 * clickondate("2021", "Aug", "25"); clickondate("2021", "Aug", "31"); } catch
-	 * (Exception e) { logger.error("Exception Occured"); e.printStackTrace();
-	 * ScreenshotUtil.getScreenshot(driver, "CheckinFailed"); }
-	 * 
-	 * }
-	 */
 
 	/**
 	 * Clicks checkin and checkout Date.
@@ -399,16 +380,16 @@ public class HomePage extends BasePage {
 		// WebElement checkinButton =
 		// wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//label[@for='checkin']//span[2]"))));
 
-		base.waitForElementToBeVisible(travelFor_Text);
+		waitForElementToBeVisible(travelFor_Text);
 
 		// WebElement travel = wait
 		// .until(ExpectedConditions.visibilityOfElementLocated((By.cssSelector("[data-cy*=travelForText]"))));
 
-		base.click(travelFor_Text);
+		click(travelFor_Text);
 
 		logger.info("Clicked on TravelFor");
 
-		base.waitForElementToBeVisible(travelReason_Text);
+		waitForElementToBeVisible(travelReason_Text);
 		WebElement travelReason = driver.findElement(travelReason_Text);
 
 		logger.info("Clicked on Leisure");
@@ -417,7 +398,7 @@ public class HomePage extends BasePage {
 	}
 
 	public void submit() {
-		base.waitForElementToBeVisible(search_Button);
+		waitForElementToBeVisible(search_Button);
 		WebElement submit = driver.findElement(By.cssSelector("[data-cy='submit']"));
 		// System.out.println("Clicked on submit");
 		logger.info("Clicked on Submit");

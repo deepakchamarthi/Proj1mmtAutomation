@@ -10,9 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 
 import mmt.bo.HomePageBO;
 import mmt.bo.PageURL;
@@ -37,16 +34,15 @@ public class RoomSelectionPage extends BasePage {
 
 	public static By pickAnotherDate_Button = By.cssSelector("#alternateDates_details");
 
-//Base page Obj wait 15sec
-	BasePage base = new BasePage(15);
+
 
 	// Clicking Rooms link in the page
 	public void clickRooms() {
 
 		try {
 
-			base.waitForElementToBeVisible(rooms_Link);
-			base.click(rooms_Link);
+			waitForElementToBeVisible(rooms_Link);
+			click(rooms_Link);
 
 			logger.info("opened Rooms link");
 		} catch (Exception e) {
@@ -84,7 +80,7 @@ public class RoomSelectionPage extends BasePage {
 			// Collecting the suggestion into the list
 			// Not using this list anywhere. But planned to use it for future purpose if we
 			// need to find some other text too
-			base.waitForElementToBeVisible(guestText);
+			waitForElementToBeVisible(guestText);
 			List<WebElement> suggestions = driver.findElements(guestText);
 			boolean flag;
 
@@ -92,10 +88,6 @@ public class RoomSelectionPage extends BasePage {
 			List<String> suggesstionsList = new ArrayList<String>();
 			for (WebElement suggestion : suggestions) {
 				counter++;
-
-				// WebElement roomText = driver.findElement(By.xpath("//p[text()='Adults']"));
-				// String roomTextValue = roomText.getText();
-				// p[text()='Room']
 
 				String roomSuggestion = suggestion.getText();
 				suggesstionsList.add(roomSuggestion);
@@ -131,8 +123,8 @@ public class RoomSelectionPage extends BasePage {
 
 		WebDriverWait wait = new WebDriverWait(driver, 60, 200);
 		WebElement comboTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(check_count));
-		base.waitForElementToBeVisible(check_count);
-		base.getText(check_count);
+		waitForElementToBeVisible(check_count);
+		getText(check_count);
 		logger.info("Guest Count Text:");
 
 		List<WebElement> searchList = driver.findElements(check_count);
@@ -151,7 +143,7 @@ public class RoomSelectionPage extends BasePage {
 	// Logic to select the room based on children and adult count displayed
 	public void click2audlts1ChildButton() {
 
-		base.waitForElementToBeVisible(rooom_Header);
+		waitForElementToBeVisible(rooom_Header);
 		List<WebElement> roomsList = driver.findElements(rooom_Header);
 		logger.info("Inside click2audlts1ChildButton");
 
@@ -164,7 +156,7 @@ public class RoomSelectionPage extends BasePage {
 				valueCounter++;
 
 			{
-				base.click(addRooms_Button);
+				click(addRooms_Button);
 
 				if (valueCounter == 1) {
 
@@ -181,7 +173,7 @@ public class RoomSelectionPage extends BasePage {
 			for (WebElement value2 : values2)
 				value2Counter++;
 			if (value2Counter == 1) {
-				base.click(addRooms_Button);
+				click(addRooms_Button);
 
 				logger.info("Button2 clicked");
 				break;
@@ -209,7 +201,7 @@ public class RoomSelectionPage extends BasePage {
 					logger.info(counter);
 					button.click();
 					logger.info("combo Button clicked");
-					base.waitForPageLoad();
+					waitForPageLoad();
 					// Fail safe mechanism to open url to continue flow in case combo button not
 					// found.
 					confirmURL();
@@ -241,8 +233,6 @@ public class RoomSelectionPage extends BasePage {
 			confirmURL();
 		}
 
-		// base.waitForElementToBeVisible(pickAnotherDate_Button);
-
 		ScreenshotUtil.getScreenshot(driver, "RoomSelectionPage");
 
 	}
@@ -255,7 +245,7 @@ public class RoomSelectionPage extends BasePage {
 			logger.error("right page opened already");
 
 		} else {
-			base.openPage(PageURL.reviewBookingURL);
+			openPage(PageURL.reviewBookingURL);
 			logger.info("Page opened?");
 
 		}
@@ -275,7 +265,7 @@ public class RoomSelectionPage extends BasePage {
 					add.click();
 					logger.info("Add room Button clicked");
 
-					base.click(reviewSelection);
+					click(reviewSelection);
 
 					driver.switchTo().alert().accept();
 					logger.info("switched to alert");
@@ -294,7 +284,7 @@ public class RoomSelectionPage extends BasePage {
 		} catch (Exception e) {
 
 			logger.info("Problem in room selection");
-			base.openPage(PageURL.reviewBookingURL);
+			openPage(PageURL.reviewBookingURL);
 
 		}
 

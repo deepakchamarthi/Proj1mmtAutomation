@@ -15,7 +15,7 @@ public class PaymentPage extends BasePage {
 	public static By details = By.cssSelector("[class='make-flex hrtl-center']");
 
 	// Basepage object with wait time 15sec
-	BasePage base = new BasePage(15);
+	
 	
 
 	// To get details from the confirmation text.
@@ -31,7 +31,7 @@ public class PaymentPage extends BasePage {
 
 		try {
 
-			base.waitForElementToBeVisible(details);
+			waitForElementToBeVisible(details);
 
 			String innerHTML = driver.findElement(details).getAttribute("innerHTML");
 

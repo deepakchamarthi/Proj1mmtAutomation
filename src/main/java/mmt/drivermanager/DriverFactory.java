@@ -20,6 +20,7 @@ public class DriverFactory {
 
 		WebDriver driver = null;
 
+		//Reading browser type form the config file and passing to swtich-case 
 		String browserType = ConfigPropertiesReader.getValueFromConfigFile(ConfigPropertiesReader.configFilePath,
 				"browser");
 

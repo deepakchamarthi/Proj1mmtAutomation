@@ -8,17 +8,17 @@ import java.util.Properties;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import mmt.pages.HomePage;
+
 
 public class ConfigPropertiesReader {
 
-	static Logger logger = LogManager.getLogger(HomePage.class);
+	static Logger logger = LogManager.getLogger(ConfigPropertiesReader.class);
 
 	// FilePaths
-	public static String configFilePath = "C:\\Users\\Priyanka\\eclipse-workspace\\proj1mmt\\src\\main\\resources\\config.properties";
+	public static String configFilePath = "src\\main\\resources\\config.properties";
 	public static Properties properties = new Properties();
-	public static String integration_envFilePath = "C:\\Users\\Priyanka\\eclipse-workspace\\proj1mmt\\src\\main\\resources\\environment\\integration.properties";
-	public static String staging_envFilePath = "C:\\Users\\Priyanka\\eclipse-workspace\\proj1mmt\\src\\main\\resources\\environment\\integration.properties";
+	public static String integration_envFilePath = "src\\main\\resources\\environment\\integration.properties";
+	public static String staging_envFilePath = "src\\main\\resources\\environment\\integration.properties";
 
 	/**
 	 * to read the properties of the env and main config files.

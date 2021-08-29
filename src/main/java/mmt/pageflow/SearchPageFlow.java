@@ -1,21 +1,11 @@
 package mmt.pageflow;
 
-import constants.StarRating;
+import mmt.constants.StarRating;
 import mmt.pages.SearchPage;
 
 public class SearchPageFlow {
 
-	/*public static void main(String[] args) {
-
-		DriverFactory.initiateDriver();
-		SearchPage search = new SearchPage();
-		PageURL url = new PageURL();
-		search.openPage(url.searchPageURL);
-
-		run_SearchPage();
-	} */
-
-	
+		
 	//Runner to run all the element interaction methods in SearchPage ( page2)
 	public   void run_SearchPage() {
 

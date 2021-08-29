@@ -8,7 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import constants.StarRating;
+
+import mmt.constants.StarRating;
 
 public class SearchPage  extends BasePage {
 
@@ -23,21 +24,21 @@ public class SearchPage  extends BasePage {
 	public static By rating_Checkbox5 = By.xpath("//p[text()='5 Star']");
 	public static By Viewmore_Link = By.xpath("//div[@id='STAR_CATEGORY']//span[@id='hlistpg_proptypes_show_more']");
 
-	//BasePage obj with wait time15
-	BasePage base = new BasePage(15);
+	
+	
 	
 
 	//To control the price scroller present in the search page
 	public void scrollControl(int min, int max, By by) {
 
-		base.waitForElementToBeVisible(by);
+		waitForElementToBeVisible(by);
 		WebElement price_slider = driver.findElement(by);
 
 		price_slider.click();
 
 		logger.info("Clicked on the slider");
 
-		base.waitForPageLoad();
+		waitForPageLoad();
 
 		Actions move = new Actions(driver);
 		Action action = (Action) move.dragAndDropBy(price_slider, min, max).build();
@@ -48,53 +49,66 @@ public class SearchPage  extends BasePage {
 	}
 	
 	public void scrollControlBy() {
-		base.slider(price_Selector);
+		slider(price_Selector);
 	}
 
+	
+	
+	private void selectRating(StarRating sRate)
+	{
+		waitForElementToBeVisible(Viewmore_Link);
+		click(Viewmore_Link);
+		waitForElementToBeVisible(rating_Checkbox1);
+		click(rating_Checkbox1);
+		logger.info("Clicked  "+sRate);
+		
+	}
+	
 	//To select the rating 
 	//The Enum is used to represent the available rating. Switch case to select on the correct checkbox  configurable startrating
 	public void startRating(StarRating sRate) {
 
 		try {
 
-			base.waitForElementToBeVisible(rating_Checkbox4);
+			waitForElementToBeVisible(rating_Checkbox4);
 			WebElement rating = driver.findElement(rating_Checkbox4);
 			// rating.click();
 
 			switch (sRate) {
 
 			case RATING1:
-				base.waitForElementToBeVisible(Viewmore_Link);
-				base.click(Viewmore_Link);
-				base.waitForElementToBeVisible(rating_Checkbox1);
-				base.click(rating_Checkbox1);
+				selectRating(sRate);
+				waitForElementToBeVisible(Viewmore_Link);
+				click(Viewmore_Link);
+				waitForElementToBeVisible(rating_Checkbox1);
+				click(rating_Checkbox1);
 				logger.info("Clicked on 1 Star ");
 				break;
 			case RATING2:
-				base.waitForElementToBeVisible(Viewmore_Link);
-				base.click(Viewmore_Link);
-				base.waitForElementToBeVisible(rating_Checkbox2);
-				base.click(rating_Checkbox2);
+				waitForElementToBeVisible(Viewmore_Link);
+				click(Viewmore_Link);
+				waitForElementToBeVisible(rating_Checkbox2);
+				click(rating_Checkbox2);
 				logger.info("Clicked on  2 Star ");
 				break;
 			case RATING3:
-				base.waitForElementToBeVisible(Viewmore_Link);
-				base.click(Viewmore_Link);
-				base.waitForElementToBeVisible(rating_Checkbox3);
-				base.click(rating_Checkbox3);
+				waitForElementToBeVisible(Viewmore_Link);
+				click(Viewmore_Link);
+				waitForElementToBeVisible(rating_Checkbox3);
+				click(rating_Checkbox3);
 				logger.info("Clicked on  3 Star ");
 				break;
 			case RATING4:
 
-				base.click(rating_Checkbox4);
+				click(rating_Checkbox4);
 				logger.info("Clicked on  4 Star ");
 				break;
 			case RATING5:
-				base.click(rating_Checkbox5);
+				click(rating_Checkbox5);
 				logger.info("Clicked on  4 Star ");
 				break;
 			default:
-				base.click(rating_Checkbox4);
+				click(rating_Checkbox4);
 				logger.info("Clicked on  4 Star default ");
 				break;
 
@@ -105,7 +119,7 @@ public class SearchPage  extends BasePage {
 
 		catch (Exception e) {
 			try {
-				base.click(rating_Checkbox4);
+				click(rating_Checkbox4);
 
 				logger.info("Clicked on the 4 Star (Catch)");
 			} catch (Exception e1) {
@@ -125,9 +139,9 @@ public class SearchPage  extends BasePage {
 	public void selectHotel(By by, int hotelPosition) {
 		
 		try {
-			base.waitForPageLoad();
+			waitForPageLoad();
 
-			base.waitForElementToBeVisible(by);
+			waitForElementToBeVisible(by);
 			List<WebElement> searchList = driver.findElements(by);
 			int counter = 0;
 			int maxHotelsInList = getNoOfHotels(by);
@@ -177,7 +191,7 @@ public class SearchPage  extends BasePage {
 	public int getNoOfHotels(By by) {
 
 		int hotelCounter = 0;
-		base.waitForElementToBeVisible(by);
+		waitForElementToBeVisible(by);
 		List<WebElement> searchList = driver.findElements(by);
 
 		for (WebElement hotel : searchList) {

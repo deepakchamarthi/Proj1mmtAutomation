@@ -19,7 +19,7 @@ public class BasePage {
 	protected WebDriver driver;
 	public WebDriverWait wait;
 
-	private Logger logger= LogManager.getLogger(HomePage.class);
+	private Logger logger= LogManager.getLogger(BasePage.class);
 
 	//constructor 
 	public BasePage() {

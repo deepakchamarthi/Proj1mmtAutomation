@@ -12,7 +12,6 @@ import mmt.bo.HomePageBO;
 public class RoomSelectionPageAssert extends RoomSelectionPage{
 
 	
-	BasePage base = new BasePage(15);
 	
 	
 	
@@ -31,7 +30,7 @@ public class RoomSelectionPageAssert extends RoomSelectionPage{
 		// Collecting the suggestion into the list
 		// Not using this list anywhere. But planned to use it for future purpose if we
 		// need to find some other text too
-		base.waitForElementToBeVisible(guestText);
+		waitForElementToBeVisible(guestText);
 		List<WebElement> suggestions = driver.findElements(guestText);
 		boolean flag;
 

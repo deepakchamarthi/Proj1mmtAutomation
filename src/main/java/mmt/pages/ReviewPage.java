@@ -18,8 +18,8 @@ public class ReviewPage  extends BasePage{
 	public static By mobile_Text = By.cssSelector("#mNo");
 	public static By pay_Button = By.cssSelector("[class*='ContinuePayment']");
 
-	//Base page Obj with 15mins wait
-	BasePage base = new BasePage(15);
+	
+
 	
 
 	
@@ -33,12 +33,12 @@ public class ReviewPage  extends BasePage{
 		TestDataGenerator.generateGuestData(guestInfo);
 
 		try {
-			base.waitForPageLoad();
-			base.waitForElementToBeVisible(firstName_Text);
-			base.fillText(firstName_Text, guestInfo.getFirstName());
-			base.fillText(lastName_Text, guestInfo.getLastName());
-			base.fillText(email_Text, guestInfo.getEmail());
-			base.fillText(mobile_Text, guestInfo.getMobile());
+			waitForPageLoad();
+			waitForElementToBeVisible(firstName_Text);
+			fillText(firstName_Text, guestInfo.getFirstName());
+			fillText(lastName_Text, guestInfo.getLastName());
+			fillText(email_Text, guestInfo.getEmail());
+			fillText(mobile_Text, guestInfo.getMobile());
 			logger.info("Data entered ");
 
 		}
@@ -54,7 +54,7 @@ public class ReviewPage  extends BasePage{
 	public void clickPay() {
 
 		try {
-			base.click(pay_Button);
+			click(pay_Button);
 			logger.info("Clicked Pay");
 			ScreenshotUtil.getScreenshot(driver, "ReviewPage");
 		}

@@ -18,22 +18,10 @@ public class ScreenshotUtil {
 	static Logger logger = LogManager.getLogger(SearchPage.class);
 
 	public static int counter = 1;
-	// output folder
-	private static String outputFolder = "C:\\Users\\Priyanka\\eclipse-workspace\\proj1mmt\\src\\main\\Output";
+	// output folder - setting as C temp
+	private static String outputFolder = "C:\\temp";
 
-	// Testing purpose
-
-	public static void main(String args[]) {
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.google.com/?gws_rd=ssl");
-
-		for (int i = 0; i < 3; i++) {
-			getScreenshot(driver, "google");
-			getScreenshot(driver);
-		}
-	}
-
+		
 	//A Simple method that takes driver as parameter and creates screenshot with name "Screenshot"
 	//Saves in the output folder
 	//incremental number will be added for every run.
